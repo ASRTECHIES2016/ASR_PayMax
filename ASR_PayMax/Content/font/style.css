@@ -1,0 +1,213 @@
+/*Website theme global settings*/
+:root {
+    --theme-blue-color: #435CC6;
+    --theme-blue-color-1: #455EEE;
+    --theme-blue-color-2: #3D56E6;
+    --theme-blue-color-3: #364DCD;
+    --theme-blue-color-4: #1E2B6F;
+    --theme-blue-color-5: #192354;
+}
+
+.bg-theme-blue-1 {
+    background: var(--theme-blue-color-1) !important;
+}
+
+.bg-theme-blue-2 {
+    background: var(--theme-blue-color-2) !important;
+}
+
+.bg-theme-blue-3 {
+    background: var(--theme-blue-color-3) !important;
+}
+
+.bg-theme-blue-4 {
+    background: var(--theme-blue-color-4) !important;
+}
+
+.bg-theme-blue-5 {
+    background: var(--theme-blue-color-5) !important;
+}
+
+
+body {
+    color: #383957;
+    background: #F4F4F7;
+    font-size: 14px;
+}
+
+.page-container {
+    transition: padding-left .5s;
+}
+
+    .page-container.menu-open {
+        padding-left: 200px;
+    }
+
+.sidebar {
+    min-height: 100vh;
+    width: 200px;
+    top: 0;
+    left: 0;
+    background: var(--primary);
+    color: #FFF;
+    position: fixed;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    transition: margin-left .5s;
+}
+
+    .sidebar .nav-link[data-toggle='collapse']::after {
+        border: none;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: "\f078";
+        color: #FFFFFF;
+        font-size: 10px;
+        float: right;
+        line-height: 2.5;
+        transform: rotate(180deg);
+        transition: transform 0.5s;
+    }
+
+    .sidebar .nav-link.collapsed[data-toggle='collapse']::after {
+        border: none;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: "\f078";
+        color: #FFFFFF;
+        font-size: 10px;
+        float: right;
+        line-height: 2.5;
+        transform: rotate(0deg);
+    }
+
+    .sidebar .sub-menu {
+        background: #026BDB;
+        padding-left: 10px;
+        left: 0px;
+    }
+
+    .sidebar .search-box {
+        background: #FFFFFF;
+    }
+
+        .sidebar .search-box .form-control {
+            background: none;
+            border: none;
+            box-shadow: none;
+        }
+
+        .sidebar .search-box .btn {
+            background: none;
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+.page-container.menu-open .sidebar {
+    margin-left: 0px;
+}
+
+.page-container .sidebar {
+    margin-left: -200px;
+}
+
+.sidebar .brand {
+    color: #FFFFFF;
+    padding: 15px;
+    padding-left: 24px;
+}
+
+.sidebar .nav.nav-pills .nav-link.active, .sidebar .nav.nav-pills .show > .nav-link {
+    border-radius: 0px;
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+}
+
+.sidebar .nav.nav-pills .nav-link {
+    color: var(--light);
+    padding: .5rem 1.5rem;
+}
+
+
+.content-container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.breadcrumb {
+    margin-bottom: 0px;
+    background: none;
+    padding: 3px;
+}
+
+.user-dropdown {
+    color: #383957;
+    text-align: left;
+}
+
+    .user-dropdown .btn.dropdown-toggle {
+        background: #ffffff;
+    }
+
+        .user-dropdown .btn.dropdown-toggle::after {
+            border: none;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            content: "\f078";
+            color: #B5B9CA;
+            font-size: 10px;
+        }
+
+.content {
+    background: #FFF;
+    margin: 0px 1.5rem;
+    padding: 1rem;
+    min-height: 70vh;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    border-radius: 4px;
+}
+
+.company-logo {
+    height: 150px;
+}
+
+.menu-button-container {
+    width: 50px !important;
+}
+
+@media (max-width: 576px) {
+    .page-container .sidebar {
+        margin-left: 0px;
+    }
+
+    .sidebar {
+        margin-left: 0px;
+        height: auto;
+        min-height: initial;
+        width: 100%;
+        position: initial;
+        transition: height .5s;
+        overflow: hidden;
+    }
+
+        .sidebar .brand {
+            color: #FFFFFF;
+            padding: 15px;
+        }
+
+    .page-container {
+        transition: height .5s;
+    }
+
+        .page-container.menu-open {
+            padding-left: 0px;
+        }
+
+            .page-container.menu-open .sidebar {
+                height: 64px;
+                transition: height .5s;
+            }
+
+    .content {
+        margin: 0px;
+    }
+}

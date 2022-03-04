@@ -1,0 +1,1745 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9FF5657-A815-4A0B-8378-E44FF5ACD6AF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ASR_PayMax</RootNamespace>
+    <AssemblyName>ASR_PayMax</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ASR_PayMaxLogic">
+      <HintPath>..\..\ASR_PayMaxLogic\ASR_PayMaxLogic\bin\ASR_PayMaxLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelLibrary.1.2011.7.31\lib\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=7.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.0\lib\net461\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.commons, Version=7.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.commons.7.2.0\lib\net461\itext.commons.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=7.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.0\lib\net461\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=7.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.0\lib\net461\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=7.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.0\lib\net461\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=7.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.0\lib\net461\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=7.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.0\lib\net461\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=7.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.0\lib\net461\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=7.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.0\lib\net461\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=7.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.0\lib\net461\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.2\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.5.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.1\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ASR_PayMaxLogic\ASR_PayMaxLogic\bin\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccessRights\AccRole.aspx" />
+    <Content Include="AccessRights\AccRoleWiseRights.aspx" />
+    <Content Include="AccessRights\AccUserWiseRights.aspx" />
+    <Content Include="AccessRights\RegisterPages.aspx" />
+    <Content Include="Allotment\PostingOrder.aspx" />
+    <Content Include="Allotment\ResignationDetails.aspx" />
+    <Content Include="Allotment\TransferOrder.aspx" />
+    <Content Include="Allotment\TransferOrderToOtherBranch.aspx" />
+    <Content Include="Content\AdminLTE.css" />
+    <Content Include="Content\AdminLTE.min.css" />
+    <Content Include="Content\bootstrap-datepicker.css" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\datatables.min.css" />
+    <Content Include="Content\font.css" />
+    <Content Include="Content\fontawesome-all.css" />
+    <Content Include="Content\font\style.css" />
+    <Content Include="Content\Font_Google.css" />
+    <Content Include="Content\hummingbird-treeview.css" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\_all-skins.css" />
+    <Content Include="Content\_all-skins.min.css" />
+    <Content Include="DataBase\SqlQuery.xml" />
+    <Content Include="fonts\font-awesome.css" />
+    <Content Include="fonts\font-awesome.min.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\ionicons.css" />
+    <Content Include="fonts\ionicons.min.css" />
+    <Content Include="Images\Cards\american-express.png" />
+    <Content Include="Images\Cards\cirrus.png" />
+    <Content Include="Images\Cards\mastercard.png" />
+    <Content Include="Images\Cards\mestro.png" />
+    <Content Include="Images\Cards\paypal.png" />
+    <Content Include="Images\Cards\paypal2.png" />
+    <Content Include="Images\Cards\visa.png" />
+    <Content Include="Images\Logos\ASR-Logo.png" />
+    <Content Include="Images\Logos\hero-bg.jpg" />
+    <Content Include="Images\Logos\icon.png" />
+    <Content Include="Images\Users\avatar.png" />
+    <Content Include="Images\Users\avatar04.png" />
+    <Content Include="Images\Users\avatar2.png" />
+    <Content Include="Images\Users\avatar3.png" />
+    <Content Include="Images\Users\avatar5.png" />
+    <Content Include="Images\Users\default-50x50.gif" />
+    <Content Include="Images\Users\icons.png" />
+    <Content Include="Images\Users\ramesh.jpeg" />
+    <Content Include="Images\Users\photo1.png" />
+    <Content Include="Images\Users\photo2.png" />
+    <Content Include="Images\Users\photo3.jpg" />
+    <Content Include="Images\Users\photo4.jpg" />
+    <Content Include="Images\Users\user1-128x128.jpg" />
+    <Content Include="Images\Users\user2-160x160.jpg" />
+    <Content Include="Images\Users\user3-128x128.jpg" />
+    <Content Include="Images\Users\user4-128x128.jpg" />
+    <Content Include="Images\Users\user5-128x128.jpg" />
+    <Content Include="Images\Users\user6-128x128.jpg" />
+    <Content Include="Images\Users\user7-128x128.jpg" />
+    <Content Include="Images\Users\user8-128x128.jpg" />
+    <Content Include="ManageLeave\DesignationWiseLeave.aspx" />
+    <Content Include="ManageLeave\LateMarkPolicy.aspx" />
+    <Content Include="ManageLeave\LeaveApplication.aspx" />
+    <Content Include="ManageLeave\LeaveApproval.aspx" />
+    <Content Include="ManageLeave\LeaveCalculation.aspx" />
+    <Content Include="ManageLeave\TypeOfLeave.aspx" />
+    <Content Include="Masters\AgreementType.aspx" />
+    <Content Include="Masters\BankBranch.aspx" />
+    <Content Include="Masters\BankMaster.aspx" />
+    <Content Include="Masters\Branch.aspx" />
+    <Content Include="Masters\CategoryDetails.aspx" />
+    <Content Include="Masters\ClientRateContract.aspx" />
+    <Content Include="Masters\Clients.aspx" />
+    <Content Include="Masters\CompanyMaster.aspx" />
+    <Content Include="Masters\CompanyParameter.aspx" />
+    <Content Include="Masters\ContractType.aspx" />
+    <Content Include="Masters\Currency.aspx" />
+    <Content Include="Masters\Designation.aspx" />
+    <Content Include="Masters\DesignationCategory.aspx" />
+    <Content Include="Masters\DesignationGroup.aspx" />
+    <Content Include="Masters\Document.aspx" />
+    <Content Include="Masters\Duty.aspx" />
+    <Content Include="Masters\Group.aspx" />
+    <Content Include="Masters\GunTypes.aspx" />
+    <Content Include="Masters\IndustrySegment.aspx" />
+    <Content Include="Masters\IndustryType.aspx" />
+    <Content Include="Masters\Languages.aspx" />
+    <Content Include="Masters\Qualifications.aspx" />
+    <Content Include="Masters\RateApplicable.aspx" />
+    <Content Include="Masters\RateContract.aspx" />
+    <Content Include="Masters\Regions.aspx" />
+    <Content Include="Masters\RelationShip.aspx" />
+    <Content Include="Masters\SalaryHead.aspx" />
+    <Content Include="Masters\SalaryHeadGroup.aspx" />
+    <Content Include="Masters\ServiceType.aspx" />
+    <Content Include="Masters\SiteCalculation.aspx" />
+    <Content Include="Masters\SiteManpower.aspx" />
+    <Content Include="Masters\SiteMaster.aspx" />
+    <Content Include="Masters\SiteWiseAdditionalBillingProduct.aspx" />
+    <Content Include="Masters\SiteWiseBillingCal.aspx" />
+    <Content Include="Masters\Slab.aspx" />
+    <Content Include="Masters\TenureOfContract.aspx" />
+    <Content Include="Masters\Zone.aspx" />
+    <Content Include="PayMaxDashboard.aspx" />
+    <Content Include="Registrations\AttachedDocument.aspx" />
+    <Content Include="Registrations\ChangePassword.aspx" />
+    <Content Include="Registrations\EmployeeBankDetails.aspx" />
+    <Content Include="Registrations\EmployeeNomineeDetails.aspx" />
+    <Content Include="Registrations\Employees.aspx" />
+    <Content Include="Registrations\EmplyeeAdditionalDetails.aspx" />
+    <Content Include="Registrations\OTPGeneration.aspx" />
+    <Content Include="Registrations\ResetPassword.aspx" />
+    <Content Include="Registrations\Users.aspx" />
+    <Content Include="ReportFiles\Jay.jpg" />
+    <Content Include="Reports\Payroll\EmployeeIDCard.aspx" />
+    <Content Include="Reports\Payroll\EmployeePaySlip.aspx" />
+    <Content Include="Reports\Payroll\PaySlipGeneration.aspx" />
+    <Content Include="Reports\Payroll\WageRegister.aspx" />
+    <Content Include="Scripts\adminlte.js" />
+    <Content Include="Scripts\adminlte.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\CommonValidation.js" />
+    <Content Include="Scripts\datatables.min.js" />
+    <Content Include="Content\adminlte.css.map" />
+    <Content Include="Content\adminlte.min.css.map" />
+    <Content Include="fonts\font-awesome.css.map" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="PayMaxMaster.Master" />
+    <Content Include="Content\font\AvenirNextLTPro-Bold.otf" />
+    <Content Include="Content\font\AvenirNextLTPro-BoldCn.otf" />
+    <Content Include="Content\font\AvenirNextLTPro-Demi.otf" />
+    <Content Include="Content\font\AvenirNextLTPro-DemiCn.otf" />
+    <Content Include="Content\font\AvenirNextLTPro-It.otf" />
+    <Content Include="Content\font\AvenirNextLTPro-Regular.otf" />
+    <Content Include="Content\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\webfonts\fa-solid-900.woff2" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="ReportFiles\Test.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_10873.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_14341.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_15326.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_16583.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_18886.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_2057.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_22222.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_23344.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_23577.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_2562.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_26273.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_26403.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_27988.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_2918.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_29191.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_30198.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_30233.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_3404.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_35584.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_3627.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_45642.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_46847.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_4882.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_55311.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_1_9844.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_0367.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_0481.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_0871.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_13504.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_14719.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_15936.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_16201.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_16444.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_1653.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_21205.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_23657.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_25406.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_31457.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_50517.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_5296.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_56958.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_5887.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_25_59402.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_1211.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_1240.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_12906.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_1371.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_1374.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_15727.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_29579.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_32551.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_33749.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_34795.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_3487.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_34978.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_35466.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_3709.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_38898.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_4110.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_4783.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_49573.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_50360.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_50718.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_5264.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_58745.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_59311.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_59802.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_59968.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_6286.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_7882.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_26_8473.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_0312.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_10689.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_14247.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_1733.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_17886.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_19136.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_21624.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_23440.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_2691.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_29715.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_31382.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_38445.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_44149.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_45227.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_45759.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_46724.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_50474.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_52862.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_58678.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_6810.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_7431.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_8547.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_28_9368.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_0132.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_0364.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_05.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_0789.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_0934.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_10412.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_11454.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_11892.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_1271.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_12958.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_14103.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_14565.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_14788.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_14912.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_1539.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_16675.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_1673.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_16860.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_17745.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_17970.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_18570.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_18706.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_1884.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_19115.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_19238.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_19338.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_19902.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_20402.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_20999.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_21664.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_21833.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_22275.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_2240.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_22759.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_23146.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_23427.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_2370.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_24850.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_25397.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_25634.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_26286.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_26383.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_26498.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_2717.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_28169.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_2843.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_28430.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_28552.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_28579.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_28721.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_28989.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_29252.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_29619.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_29809.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_30223.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_30359.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_30373.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_31217.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_31259.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_31295.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_3262.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_32878.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_32977.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_33375.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_33867.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_34504.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_3482.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_35744.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_35950.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_36672.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_3673.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_37650.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_3820.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_38289.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_38495.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_39404.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_4022.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_40771.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_41783.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_4253.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_43714.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_44257.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_44692.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_45396.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_45711.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_45745.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_47161.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_47855.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_47908.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_48471.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_487.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_49568.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_49594.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_49674.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_49869.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_49892.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_51230.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_51299.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_52352.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_52644.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_527.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_52923.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_53801.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_54401.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_55307.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_55613.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_55648.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_59491.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_7260.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_8574.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_8711.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_01_2_98.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_05_26_0270.pdf" />
+    <Content Include="ReportFiles\Wage_Register_2020_05_26_49594.pdf" />
+    <Content Include="ReportFiles\Wage_Register_January_2021_20_0830.pdf" />
+    <Content Include="ReportFiles\Wage_Register_January_2021_20_164.pdf" />
+    <Content Include="ReportFiles\Wage_Register_January_2021_20_2768.pdf" />
+    <Content Include="ReportFiles\Wage_Register_January_2021_20_5733.pdf" />
+    <Content Include="ReportFiles\Wage_Register_January_2021_20_5918.pdf" />
+    <Content Include="ReportFiles\Wage_Register_March_2021_20_0439.pdf" />
+    <Content Include="ReportFiles\Wage_Register_March_2021_20_2805.pdf" />
+    <Content Include="ReportFiles\Wage_Register_March_2021_20_42121.pdf" />
+    <Content Include="ReportFiles\Wage_Register_March_2021_20_829.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_10_56261.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_10_57931.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_10_59294.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_10_59477.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_26_39293.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_26_40703.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_26_58869.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_0199.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_14812.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_17353.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_21778.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_33361.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_33395.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_35103.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_35712.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_36338.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_37341.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_38294.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_41127.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_4484.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_49815.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_5313.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_54622.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_55831.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_57161.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_57250.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_58722.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_59518.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_30_9762.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2020_9_467.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2021_20_20983.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2021_20_45877.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2021_20_52184.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2021_20_58607.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2021_26_0436.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2021_26_13688.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2021_26_27179.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2021_26_9678.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2021_27_11922.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2021_27_13645.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2021_27_2215.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2021_27_34616.pdf" />
+    <Content Include="ReportFiles\Wage_Register_May_2021_27_36276.pdf" />
+    <Content Include="ReportFiles\Wage_Register_November_2020_20_1471.pdf" />
+    <Content Include="ReportFiles\Wage_Register_November_2020_20_23302.pdf" />
+    <Content Include="ReportFiles\Wage_Register_November_2020_20_24240.pdf" />
+    <Content Include="ReportFiles\Wage_Register_November_2020_20_29282.pdf" />
+    <Content Include="ReportFiles\Wage_Register_November_2020_20_31404.pdf" />
+    <Content Include="ReportFiles\Wage_Register_November_2020_20_3282.pdf" />
+    <Content Include="ReportFiles\Wage_Register_November_2020_20_37869.pdf" />
+    <Content Include="PDFs\20210228_162922.pdf" />
+    <Content Include="PDFs\20210228_162926.pdf" />
+    <Content Include="PDFs\20210418_070435.pdf" />
+    <Content Include="PDFs\20210418_101044.pdf" />
+    <Content Include="PDFs\20210418_171213.pdf" />
+    <Content Include="PDFs\20210418_195847.pdf" />
+    <Content Include="PDFs\20210418_202822.pdf" />
+    <Content Include="PDFs\20210418_211927.pdf" />
+    <Content Include="PDFs\20210421_073105.pdf" />
+    <Content Include="PDFs\20210421_073956.pdf" />
+    <Content Include="PDFs\20210421_074108.pdf" />
+    <Content Include="PDFs\20210421_074253.pdf" />
+    <Content Include="PDFs\20210421_075346.pdf" />
+    <Content Include="PDFs\20210421_092623.pdf" />
+    <Content Include="PDFs\20210424_120913.pdf" />
+    <Content Include="PDFs\20210424_134929.pdf" />
+    <Content Include="PDFs\20210424_150252.pdf" />
+    <Content Include="PDFs\20210424_172603.pdf" />
+    <Content Include="PDFs\20210424_172843.pdf" />
+    <Content Include="PDFs\20210424_172844.pdf" />
+    <Content Include="PDFs\20210424_173051.pdf" />
+    <Content Include="PDFs\20210424_173205.pdf" />
+    <Content Include="PDFs\20210424_173241.pdf" />
+    <Content Include="PDFs\20210424_173429.pdf" />
+    <Content Include="PDFs\20210424_174510.pdf" />
+    <Content Include="PDFs\20210424_175045.pdf" />
+    <Content Include="PDFs\20210424_175128.pdf" />
+    <Content Include="PDFs\20210424_175841.pdf" />
+    <Content Include="PDFs\20210424_180328.pdf" />
+    <Content Include="PDFs\20210424_180356.pdf" />
+    <Content Include="PDFs\20210424_182408.pdf" />
+    <Content Include="PDFs\20210424_182622.pdf" />
+    <Content Include="PDFs\20210424_182704.pdf" />
+    <Content Include="PDFs\20210424_182934.pdf" />
+    <Content Include="PDFs\20210424_182937.pdf" />
+    <Content Include="PDFs\20210424_182938.pdf" />
+    <Content Include="PDFs\20210424_183134.pdf" />
+    <Content Include="PDFs\20210424_183151.pdf" />
+    <Content Include="PDFs\20210424_183152.pdf" />
+    <Content Include="PDFs\20210424_183556.pdf" />
+    <Content Include="PDFs\20210424_183729.pdf" />
+    <Content Include="PDFs\20210424_183826.pdf" />
+    <Content Include="PDFs\20210424_184018.pdf" />
+    <Content Include="PDFs\20210424_184044.pdf" />
+    <Content Include="PDFs\20210424_193253.pdf" />
+    <Content Include="PDFs\20210424_195303.pdf" />
+    <Content Include="PDFs\20210424_200513.pdf" />
+    <Content Include="PDFs\20210424_200534.pdf" />
+    <Content Include="PDFs\20210424_200535.pdf" />
+    <Content Include="PDFs\20210424_200536.pdf" />
+    <Content Include="PDFs\20210424_200537.pdf" />
+    <Content Include="PDFs\20210424_210803.pdf" />
+    <Content Include="PDFs\20210425_073413.pdf" />
+    <Content Include="PDFs\20210425_075613.pdf" />
+    <Content Include="PDFs\20210425_080814.pdf" />
+    <Content Include="PDFs\20210425_080833.pdf" />
+    <Content Include="PDFs\20210425_084310.pdf" />
+    <Content Include="PDFs\20210425_101450.pdf" />
+    <Content Include="PDFs\20210425_103843.pdf" />
+    <Content Include="PDFs\20210425_103931.pdf" />
+    <Content Include="PDFs\20210425_103932.pdf" />
+    <Content Include="PDFs\20210425_103934.pdf" />
+    <Content Include="PDFs\20210425_103935.pdf" />
+    <Content Include="PDFs\20210425_103936.pdf" />
+    <Content Include="PDFs\20210425_103937.pdf" />
+    <Content Include="PDFs\20210425_110045.pdf" />
+    <Content Include="PDFs\20210425_110357.pdf" />
+    <Content Include="PDFs\20210426_195805.pdf" />
+    <Content Include="PDFs\20210426_200929.pdf" />
+    <Content Include="PDFs\20210426_210405.pdf" />
+    <Content Include="PDFs\20210426_212856.pdf" />
+    <Content Include="PDFs\20210426_214851.pdf" />
+    <Content Include="PDFs\20210426_215910.pdf" />
+    <Content Include="PDFs\20210428_204333.pdf" />
+    <Content Include="PDFs\20210428_211627.pdf" />
+    <Content Include="PDFs\20210428_220514.pdf" />
+    <Content Include="PDFs\20210428_222819.pdf" />
+    <Content Include="PDFs\20210501_140944.pdf" />
+    <Content Include="PDFs\20210501_151335.pdf" />
+    <Content Include="PDFs\20210501_155534.pdf" />
+    <Content Include="PDFs\20210502_090650.pdf" />
+    <Content Include="PDFs\20210502_103529.pdf" />
+    <Content Include="PDFs\20210502_115211.pdf" />
+    <Content Include="PDFs\20210502_121742.pdf" />
+    <Content Include="PDFs\20210502_132000.pdf" />
+    <Content Include="PDFs\20210502_141010.pdf" />
+    <Content Include="PDFs\20210502_161637.pdf" />
+    <Content Include="PDFs\20210502_165130.pdf" />
+    <Content Include="PDFs\20210502_171518.pdf" />
+    <Content Include="PDFs\20210502_172014.pdf" />
+    <Content Include="PDFs\20210502_174448.pdf" />
+    <Content Include="PDFs\20210502_183302.pdf" />
+    <Content Include="PDFs\20210502_194848.pdf" />
+    <Content Include="PDFs\20210502_195948.pdf" />
+    <Content Include="PDFs\20210502_210319.pdf" />
+    <Content Include="PDFs\20210502_210422.pdf" />
+    <Content Include="PDFs\20210502_210431.pdf" />
+    <Content Include="PDFs\20210502_210504.pdf" />
+    <Content Include="PDFs\20210502_212718.pdf" />
+    <Content Include="PDFs\20210502_212801.pdf" />
+    <Content Include="PDFs\20210502_212802.pdf" />
+    <Content Include="PDFs\20210502_212803.pdf" />
+    <Content Include="PDFs\20210502_212804.pdf" />
+    <Content Include="PDFs\20210502_212805.pdf" />
+    <Content Include="PDFs\20210502_212806.pdf" />
+    <Content Include="PDFs\20210502_212807.pdf" />
+    <Content Include="PDFs\20210502_212808.pdf" />
+    <Content Include="PDFs\20210502_212850.pdf" />
+    <Content Include="PDFs\20210502_212851.pdf" />
+    <Content Include="PDFs\20210502_212852.pdf" />
+    <Content Include="PDFs\20210502_212853.pdf" />
+    <Content Include="PDFs\20210502_212854.pdf" />
+    <Content Include="PDFs\20210502_212856.pdf" />
+    <Content Include="PDFs\20210502_212857.pdf" />
+    <Content Include="PDFs\20210502_212858.pdf" />
+    <Content Include="PDFs\20210502_212859.pdf" />
+    <Content Include="PDFs\20210502_212900.pdf" />
+    <Content Include="PDFs\20210502_212901.pdf" />
+    <Content Include="PDFs\20210502_212902.pdf" />
+    <Content Include="PDFs\20210502_212903.pdf" />
+    <Content Include="PDFs\20210502_212904.pdf" />
+    <Content Include="PDFs\20210502_212905.pdf" />
+    <Content Include="PDFs\20210502_212906.pdf" />
+    <Content Include="PDFs\20210502_212907.pdf" />
+    <Content Include="PDFs\20210502_212908.pdf" />
+    <Content Include="PDFs\20210502_212909.pdf" />
+    <Content Include="PDFs\20210502_212910.pdf" />
+    <Content Include="PDFs\20210502_212911.pdf" />
+    <Content Include="PDFs\20210502_212921.pdf" />
+    <Content Include="PDFs\20210502_212922.pdf" />
+    <Content Include="PDFs\20210502_212923.pdf" />
+    <Content Include="PDFs\20210502_212929.pdf" />
+    <Content Include="PDFs\20210508_090033.pdf" />
+    <Content Include="PDFs\20210508_092743.pdf" />
+    <Content Include="PDFs\20210508_125019.pdf" />
+    <Content Include="PDFs\20210508_133209.pdf" />
+    <Content Include="PDFs\20210508_133529.pdf" />
+    <Content Include="PDFs\20210509_092145.pdf" />
+    <Content Include="PDFs\20210509_093111.pdf" />
+    <Content Include="PDFs\20210509_094615.pdf" />
+    <Content Include="PDFs\20210509_102644.pdf" />
+    <Content Include="PDFs\20210509_111759.pdf" />
+    <Content Include="PDFs\20210509_162802.pdf" />
+    <Content Include="PDFs\20210509_173122.pdf" />
+    <Content Include="PDFs\20210509_173551.pdf" />
+    <Content Include="PDFs\20210509_175745.pdf" />
+    <Content Include="PDFs\20210509_183218.pdf" />
+    <Content Include="PDFs\20210522_103409.pdf" />
+    <Content Include="PDFs\20210522_201202.pdf" />
+    <Content Include="PDFs\20210523_092942.pdf" />
+    <Content Include="PDFs\20210523_130243.pdf" />
+    <Content Include="PDFs\20210523_155627.pdf" />
+    <Content Include="PDFs\20210523_175718.pdf" />
+    <Content Include="PDFs\20210523_185416.pdf" />
+    <Content Include="PDFs\20210523_190740.pdf" />
+    <Content Include="PDFs\20210523_191717.pdf" />
+    <Content Include="PDFs\20210524_065746.pdf" />
+    <Content Include="PDFs\20210525_065017.pdf" />
+    <Content Include="PDFs\20210525_065050.pdf" />
+    <Content Include="PDFs\20210525_080532.pdf" />
+    <Content Include="PDFs\20210525_102850.pdf" />
+    <Content Include="PDFs\20210525_212411.pdf" />
+    <Content Include="PDFs\20210525_221344.pdf" />
+    <Content Include="PDFs\20210525_231903.pdf" />
+    <Content Include="PDFs\20210526_143110.pdf" />
+    <Content Include="PDFs\20210526_162937.pdf" />
+    <Content Include="PDFs\20210526_180104.pdf" />
+    <Content Include="PDFs\20210526_183452.pdf" />
+    <Content Include="PDFs\20210526_191134.pdf" />
+    <Content Include="PDFs\20210526_202824.pdf" />
+    <Content Include="PDFs\20210530_152552.pdf" />
+    <Content Include="PDFs\20210530_153208.pdf" />
+    <Content Include="PDFs\20210530_173722.pdf" />
+    <Content Include="PDFs\20210606_130021.pdf" />
+    <Content Include="PDFs\20210609_193554.pdf" />
+    <Content Include="PDFs\20210610_065529.pdf" />
+    <Content Include="PDFs\20210610_082738.pdf" />
+    <Content Include="PDFs\20210620_110607.pdf" />
+    <Content Include="PDFs\20210620_120216.pdf" />
+    <Content Include="PDFs\20210620_123749.pdf" />
+    <Content Include="PDFs\20210620_181622.pdf" />
+    <Content Include="PDFs\20210620_185911.pdf" />
+    <Content Include="PDFs\20210620_201413.pdf" />
+    <Content Include="PDFs\20210620_214147.pdf" />
+    <Content Include="PDFs\20210626_155840.pdf" />
+    <Content Include="PDFs\20210626_160855.pdf" />
+    <Content Include="PDFs\20210626_161737.pdf" />
+    <Content Include="PDFs\20210626_162057.pdf" />
+    <Content Include="PDFs\20210626_200710.pdf" />
+    <Content Include="PDFs\20210626_202234.pdf" />
+    <Content Include="PDFs\20210626_205857.pdf" />
+    <Content Include="PDFs\20210627_103340.pdf" />
+    <Content Include="PDFs\20210627_131100.pdf" />
+    <Content Include="PDFs\20210627_133630.pdf" />
+    <Content Include="PDFs\20210628_203858.pdf" />
+    <Content Include="PDFs\20210713_161059.pdf" />
+    <Content Include="PDFs\20210713_162138.pdf" />
+    <Content Include="PDFs\20210713_165602.pdf" />
+    <Content Include="PDFs\20210713_170652.pdf" />
+    <Content Include="PDFs\20210713_182457.pdf" />
+    <Content Include="PDFs\20210713_191334.pdf" />
+    <Content Include="PDFs\20210713_211815.pdf" />
+    <Content Include="PDFs\20210713_212858.pdf" />
+    <Content Include="PDFs\20210713_215542.pdf" />
+    <Content Include="PDFs\20210713_221051.pdf" />
+    <Content Include="PDFs\20210713_221824.pdf" />
+    <Content Include="PDFs\20210721_095051.pdf" />
+    <Content Include="PDFs\20210721_095756.pdf" />
+    <Content Include="PDFs\20210721_095917.pdf" />
+    <Content Include="PDFs\20210721_102832.pdf" />
+    <Content Include="PDFs\20210721_103142.pdf" />
+    <Content Include="PDFs\20210721_111425.pdf" />
+    <Content Include="PDFs\20210721_115539.pdf" />
+    <Content Include="PDFs\20210721_133420.pdf" />
+    <Content Include="PDFs\20210721_135049.pdf" />
+    <Content Include="PDFs\20210727_213049.pdf" />
+    <Content Include="PDFs\20210728_210317.pdf" />
+    <Content Include="PDFs\20210801_175731.pdf" />
+    <Content Include="PDFs\20210801_181936.pdf" />
+    <Content Include="PDFs\20210801_190743.pdf" />
+    <Content Include="PDFs\20210801_194429.pdf" />
+    <Content Include="PDFs\20210801_201858.pdf" />
+    <Content Include="PDFs\20210801_204744.pdf" />
+    <Content Include="PDFs\20210801_212907.pdf" />
+    <Content Include="PDFs\20210801_213724.pdf" />
+    <Content Include="PDFs\20210801_213730.pdf" />
+    <Content Include="PDFs\20210821_153947.pdf" />
+    <Content Include="PDFs\20210821_160058.pdf" />
+    <Content Include="PDFs\20210821_161056.pdf" />
+    <Content Include="PDFs\20210821_161119.pdf" />
+    <Content Include="PDFs\20210821_162345.pdf" />
+    <Content Include="PDFs\20210821_162411.pdf" />
+    <Content Include="PDFs\20210821_162437.pdf" />
+    <Content Include="PDFs\20210821_163024.pdf" />
+    <Content Include="PDFs\20210821_165549.pdf" />
+    <Content Include="PDFs\20210821_165853.pdf" />
+    <Content Include="PDFs\20210821_165950.pdf" />
+    <Content Include="PDFs\20210821_170024.pdf" />
+    <Content Include="PDFs\20210821_170043.pdf" />
+    <Content Include="PDFs\20210821_170058.pdf" />
+    <Content Include="PDFs\20210821_170202.pdf" />
+    <Content Include="PDFs\20210821_170221.pdf" />
+    <Content Include="PDFs\20210821_170241.pdf" />
+    <Content Include="PDFs\20210821_170305.pdf" />
+    <Content Include="PDFs\20210821_170327.pdf" />
+    <Content Include="PDFs\20210821_170354.pdf" />
+    <Content Include="PDFs\20210821_170801.pdf" />
+    <Content Include="PDFs\20210821_172934.pdf" />
+    <Content Include="PDFs\20210821_173035.pdf" />
+    <Content Include="PDFs\20210821_173056.pdf" />
+    <Content Include="PDFs\20210821_173115.pdf" />
+    <Content Include="PDFs\20210821_173128.pdf" />
+    <Content Include="PDFs\20210821_173639.pdf" />
+    <Content Include="PDFs\20210821_173704.pdf" />
+    <Content Include="PDFs\20210821_173940.pdf" />
+    <Content Include="PDFs\20210821_174015.pdf" />
+    <Content Include="PDFs\20210821_174129.pdf" />
+    <Content Include="PDFs\20210821_174428.pdf" />
+    <Content Include="PDFs\20210821_174503.pdf" />
+    <Content Include="PDFs\20210821_191002.pdf" />
+    <Content Include="PDFs\20210821_191525.pdf" />
+    <Content Include="PDFs\20210821_191614.pdf" />
+    <Content Include="PDFs\20210821_191642.pdf" />
+    <Content Include="PDFs\20210821_192219.pdf" />
+    <Content Include="PDFs\20210821_192413.pdf" />
+    <Content Include="PDFs\20211010_120346.pdf" />
+    <Content Include="PDFs\20211010_120450.pdf" />
+    <Content Include="PDFs\20211010_125258.pdf" />
+    <Content Include="PDFs\20211010_130605.pdf" />
+    <Content Include="PDFs\20211010_130830.pdf" />
+    <Content Include="PDFs\20211010_131045.pdf" />
+    <Content Include="PDFs\20211010_131423.pdf" />
+    <Content Include="PDFs\20211010_132435.pdf" />
+    <Content Include="PDFs\20211010_133023.pdf" />
+    <Content Include="PDFs\20211010_133159.pdf" />
+    <Content Include="PDFs\20211010_134247.pdf" />
+    <Content Include="PDFs\20211010_134916.pdf" />
+    <Content Include="PDFs\20211010_135546.pdf" />
+    <Content Include="PDFs\20211010_140600.pdf" />
+    <Content Include="PDFs\20211010_140905.pdf" />
+    <Content Include="PDFs\20211010_141025.pdf" />
+    <Content Include="PDFs\20211010_141127.pdf" />
+    <Content Include="PDFs\20211010_143904.pdf" />
+    <Content Include="PDFs\20211010_144526.pdf" />
+    <Content Include="PDFs\20211010_144725.pdf" />
+    <Content Include="PDFs\20211010_151035.pdf" />
+    <Content Include="PDFs\20211010_154050.pdf" />
+    <Content Include="PDFs\20211010_164951.pdf" />
+    <Content Include="PDFs\20211017_100442.pdf" />
+    <Content Include="PDFs\20211017_101501.pdf" />
+    <Content Include="PDFs\20211017_130142.pdf" />
+    <Content Include="PDFs\20211017_133845.pdf" />
+    <Content Include="PDFs\20211017_140517.pdf" />
+    <Content Include="PDFs\20211017_141020.pdf" />
+    <Content Include="PDFs\20211017_152813.pdf" />
+    <Content Include="PDFs\20211017_154516.pdf" />
+    <Content Include="PDFs\20211017_160823.pdf" />
+    <Content Include="PDFs\20211017_161038.pdf" />
+    <Content Include="PDFs\20211017_161245.pdf" />
+    <Content Include="PDFs\20211017_164932.pdf" />
+    <Content Include="PDFs\20211024_145753.pdf" />
+    <Content Include="PDFs\20211024_154632.pdf" />
+    <Content Include="PDFs\20211024_155243.pdf" />
+    <Content Include="PDFs\20211024_162006.pdf" />
+    <Content Include="PDFs\20211024_171700.pdf" />
+    <Content Include="PDFs\20211024_175237.pdf" />
+    <Content Include="PDFs\20211024_183657.pdf" />
+    <Content Include="PDFs\20211024_184425.pdf" />
+    <Content Include="PDFs\20211024_195105.pdf" />
+    <Content Include="PDFs\20211024_195150.pdf" />
+    <Content Include="PDFs\20211024_201320.pdf" />
+    <Content Include="PDFs\20211024_205928.pdf" />
+    <Content Include="PDFs\20211024_211650.pdf" />
+    <Content Include="PDFs\20211025_200330.pdf" />
+    <Content Include="PDFs\20211025_201104.pdf" />
+    <Content Include="PDFs\20211025_201242.pdf" />
+    <Content Include="PDFs\20211025_204129.pdf" />
+    <Content Include="PDFs\20211025_213400.pdf" />
+    <Content Include="PDFs\20211025_225205.pdf" />
+    <Content Include="PDFs\20211025_233158.pdf" />
+    <Content Include="PDFs\20211025_233510.pdf" />
+    <Content Include="PDFs\20211026_201133.pdf" />
+    <Content Include="PDFs\20211028_211901.pdf" />
+    <Content Include="PDFs\20211028_212226.pdf" />
+    <Content Include="PDFs\20211028_214958.pdf" />
+    <Content Include="PDFs\20211028_215119.pdf" />
+    <Content Include="PDFs\20211028_230557.pdf" />
+    <Content Include="PDFs\20211028_231416.pdf" />
+    <Content Include="PDFs\20211028_231838.pdf" />
+    <Content Include="PDFs\20211028_231948.pdf" />
+    <Content Include="PDFs\20211028_232027.pdf" />
+    <Content Include="PDFs\20211030_081916.pdf" />
+    <Content Include="PDFs\20211030_092115.pdf" />
+    <Content Include="PDFs\20211030_093907.pdf" />
+    <Content Include="PDFs\20211030_100313.pdf" />
+    <Content Include="PDFs\20211030_192806.pdf" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="ShowAllMasterDetails\AllBranchMaster.aspx" />
+    <Content Include="ShowAllMasterDetails\AllClientMaster.aspx" />
+    <Content Include="ShowAllMasterDetails\AllClientRateContract.aspx" />
+    <Content Include="ShowAllMasterDetails\AllEmployeeDetails.aspx" />
+    <Content Include="ShowAllMasterDetails\AllUserMaster.aspx" />
+    <Content Include="Transactions\AttendanceEmployee.aspx" />
+    <Content Include="WebServices\AdditionalServices.asmx" />
+    <Content Include="WebServices\NotificationServices.asmx" />
+    <Content Include="WebServices\SendMailServices.asmx" />
+    <Content Include="libman.json" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Scripts\hummingbird-treeview.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\select2.js" />
+    <Content Include="ShowAllMasterDetails\AllSiteMaster.aspx" />
+    <Content Include="Transactions\AttendanceType.aspx" />
+    <Content Include="Transactions\MonthAttendance.aspx" />
+    <Content Include="Transactions\MonthlyAttendanceUpload.aspx" />
+    <Content Include="Transactions\MonthlyVariableUpload.aspx" />
+    <Content Include="Transactions\PaysheetGenerate.aspx" />
+    <Content Include="UsersLogin.aspx" />
+    <Content Include="Utilitys\AllUploadUtilities.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessRights\AccRole.aspx.cs">
+      <DependentUpon>AccRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessRights\AccRole.aspx.designer.cs">
+      <DependentUpon>AccRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessRights\AccRoleWiseRights.aspx.cs">
+      <DependentUpon>AccRoleWiseRights.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessRights\AccRoleWiseRights.aspx.designer.cs">
+      <DependentUpon>AccRoleWiseRights.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessRights\AccUserWiseRights.aspx.cs">
+      <DependentUpon>AccUserWiseRights.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessRights\AccUserWiseRights.aspx.designer.cs">
+      <DependentUpon>AccUserWiseRights.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessRights\RegisterPages.aspx.cs">
+      <DependentUpon>RegisterPages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessRights\RegisterPages.aspx.designer.cs">
+      <DependentUpon>RegisterPages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Allotment\PostingOrder.aspx.cs">
+      <DependentUpon>PostingOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Allotment\PostingOrder.aspx.designer.cs">
+      <DependentUpon>PostingOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Allotment\ResignationDetails.aspx.cs">
+      <DependentUpon>ResignationDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Allotment\ResignationDetails.aspx.designer.cs">
+      <DependentUpon>ResignationDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Allotment\TransferOrder.aspx.cs">
+      <DependentUpon>TransferOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Allotment\TransferOrder.aspx.designer.cs">
+      <DependentUpon>TransferOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Allotment\TransferOrderToOtherBranch.aspx.cs">
+      <DependentUpon>TransferOrderToOtherBranch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Allotment\TransferOrderToOtherBranch.aspx.designer.cs">
+      <DependentUpon>TransferOrderToOtherBranch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalProjectClass\ASR_Common.cs" />
+    <Compile Include="GlobalProjectClass\GenerateExcel_Report.cs" />
+    <Compile Include="GlobalProjectClass\GeneratePdf_Report.cs" />
+    <Compile Include="GlobalProjectClass\UsersSession.cs" />
+    <Compile Include="ManageLeave\DesignationWiseLeave.aspx.cs">
+      <DependentUpon>DesignationWiseLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageLeave\DesignationWiseLeave.aspx.designer.cs">
+      <DependentUpon>DesignationWiseLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageLeave\LateMarkPolicy.aspx.cs">
+      <DependentUpon>LateMarkPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageLeave\LateMarkPolicy.aspx.designer.cs">
+      <DependentUpon>LateMarkPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageLeave\LeaveApplication.aspx.cs">
+      <DependentUpon>LeaveApplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageLeave\LeaveApplication.aspx.designer.cs">
+      <DependentUpon>LeaveApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageLeave\LeaveApproval.aspx.cs">
+      <DependentUpon>LeaveApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageLeave\LeaveApproval.aspx.designer.cs">
+      <DependentUpon>LeaveApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageLeave\LeaveCalculation.aspx.cs">
+      <DependentUpon>LeaveCalculation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageLeave\LeaveCalculation.aspx.designer.cs">
+      <DependentUpon>LeaveCalculation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageLeave\TypeOfLeave.aspx.cs">
+      <DependentUpon>TypeOfLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageLeave\TypeOfLeave.aspx.designer.cs">
+      <DependentUpon>TypeOfLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\AgreementType.aspx.cs">
+      <DependentUpon>AgreementType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\AgreementType.aspx.designer.cs">
+      <DependentUpon>AgreementType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\BankBranch.aspx.cs">
+      <DependentUpon>BankBranch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\BankBranch.aspx.designer.cs">
+      <DependentUpon>BankBranch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\BankMaster.aspx.cs">
+      <DependentUpon>BankMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\BankMaster.aspx.designer.cs">
+      <DependentUpon>BankMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Branch.aspx.cs">
+      <DependentUpon>Branch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Branch.aspx.designer.cs">
+      <DependentUpon>Branch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\CategoryDetails.aspx.cs">
+      <DependentUpon>CategoryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\CategoryDetails.aspx.designer.cs">
+      <DependentUpon>CategoryDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\ClientRateContract.aspx.cs">
+      <DependentUpon>ClientRateContract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\ClientRateContract.aspx.designer.cs">
+      <DependentUpon>ClientRateContract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Clients.aspx.cs">
+      <DependentUpon>Clients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Clients.aspx.designer.cs">
+      <DependentUpon>Clients.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\CompanyMaster.aspx.cs">
+      <DependentUpon>CompanyMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\CompanyMaster.aspx.designer.cs">
+      <DependentUpon>CompanyMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\CompanyParameter.aspx.cs">
+      <DependentUpon>CompanyParameter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\CompanyParameter.aspx.designer.cs">
+      <DependentUpon>CompanyParameter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\ContractType.aspx.cs">
+      <DependentUpon>ContractType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\ContractType.aspx.designer.cs">
+      <DependentUpon>ContractType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Currency.aspx.cs">
+      <DependentUpon>Currency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Currency.aspx.designer.cs">
+      <DependentUpon>Currency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Designation.aspx.cs">
+      <DependentUpon>Designation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Designation.aspx.designer.cs">
+      <DependentUpon>Designation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DesignationCategory.aspx.cs">
+      <DependentUpon>DesignationCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\DesignationCategory.aspx.designer.cs">
+      <DependentUpon>DesignationCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DesignationGroup.aspx.cs">
+      <DependentUpon>DesignationGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\DesignationGroup.aspx.designer.cs">
+      <DependentUpon>DesignationGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Document.aspx.cs">
+      <DependentUpon>Document.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Document.aspx.designer.cs">
+      <DependentUpon>Document.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Duty.aspx.cs">
+      <DependentUpon>Duty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Duty.aspx.designer.cs">
+      <DependentUpon>Duty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Group.aspx.cs">
+      <DependentUpon>Group.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Group.aspx.designer.cs">
+      <DependentUpon>Group.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\GunTypes.aspx.cs">
+      <DependentUpon>GunTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\GunTypes.aspx.designer.cs">
+      <DependentUpon>GunTypes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\IndustrySegment.aspx.cs">
+      <DependentUpon>IndustrySegment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\IndustrySegment.aspx.designer.cs">
+      <DependentUpon>IndustrySegment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\IndustryType.aspx.cs">
+      <DependentUpon>IndustryType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\IndustryType.aspx.designer.cs">
+      <DependentUpon>IndustryType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Languages.aspx.cs">
+      <DependentUpon>Languages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Languages.aspx.designer.cs">
+      <DependentUpon>Languages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Qualifications.aspx.cs">
+      <DependentUpon>Qualifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Qualifications.aspx.designer.cs">
+      <DependentUpon>Qualifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\RateApplicable.aspx.cs">
+      <DependentUpon>RateApplicable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\RateApplicable.aspx.designer.cs">
+      <DependentUpon>RateApplicable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\RateContract.aspx.cs">
+      <DependentUpon>RateContract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\RateContract.aspx.designer.cs">
+      <DependentUpon>RateContract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Regions.aspx.cs">
+      <DependentUpon>Regions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Regions.aspx.designer.cs">
+      <DependentUpon>Regions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\RelationShip.aspx.cs">
+      <DependentUpon>RelationShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\RelationShip.aspx.designer.cs">
+      <DependentUpon>RelationShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\SalaryHead.aspx.cs">
+      <DependentUpon>SalaryHead.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\SalaryHead.aspx.designer.cs">
+      <DependentUpon>SalaryHead.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\SalaryHeadGroup.aspx.cs">
+      <DependentUpon>SalaryHeadGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\SalaryHeadGroup.aspx.designer.cs">
+      <DependentUpon>SalaryHeadGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\ServiceType.aspx.cs">
+      <DependentUpon>ServiceType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\ServiceType.aspx.designer.cs">
+      <DependentUpon>ServiceType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\SiteCalculation.aspx.cs">
+      <DependentUpon>SiteCalculation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\SiteCalculation.aspx.designer.cs">
+      <DependentUpon>SiteCalculation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\SiteManpower.aspx.cs">
+      <DependentUpon>SiteManpower.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\SiteManpower.aspx.designer.cs">
+      <DependentUpon>SiteManpower.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\SiteMaster.aspx.cs">
+      <DependentUpon>SiteMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\SiteMaster.aspx.designer.cs">
+      <DependentUpon>SiteMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\SiteWiseAdditionalBillingProduct.aspx.cs">
+      <DependentUpon>SiteWiseAdditionalBillingProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\SiteWiseAdditionalBillingProduct.aspx.designer.cs">
+      <DependentUpon>SiteWiseAdditionalBillingProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\SiteWiseBillingCal.aspx.cs">
+      <DependentUpon>SiteWiseBillingCal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\SiteWiseBillingCal.aspx.designer.cs">
+      <DependentUpon>SiteWiseBillingCal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Slab.aspx.cs">
+      <DependentUpon>Slab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Slab.aspx.designer.cs">
+      <DependentUpon>Slab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\TenureOfContract.aspx.cs">
+      <DependentUpon>TenureOfContract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\TenureOfContract.aspx.designer.cs">
+      <DependentUpon>TenureOfContract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Zone.aspx.cs">
+      <DependentUpon>Zone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Zone.aspx.designer.cs">
+      <DependentUpon>Zone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PayMaxDashboard.aspx.cs">
+      <DependentUpon>PayMaxDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayMaxDashboard.aspx.designer.cs">
+      <DependentUpon>PayMaxDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PayMaxMaster.Master.cs">
+      <DependentUpon>PayMaxMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayMaxMaster.Master.designer.cs">
+      <DependentUpon>PayMaxMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrations\AttachedDocument.aspx.cs">
+      <DependentUpon>AttachedDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrations\AttachedDocument.aspx.designer.cs">
+      <DependentUpon>AttachedDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registrations\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrations\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registrations\EmployeeBankDetails.aspx.cs">
+      <DependentUpon>EmployeeBankDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrations\EmployeeBankDetails.aspx.designer.cs">
+      <DependentUpon>EmployeeBankDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registrations\EmployeeNomineeDetails.aspx.cs">
+      <DependentUpon>EmployeeNomineeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrations\EmployeeNomineeDetails.aspx.designer.cs">
+      <DependentUpon>EmployeeNomineeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registrations\Employees.aspx.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrations\Employees.aspx.designer.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registrations\EmplyeeAdditionalDetails.aspx.cs">
+      <DependentUpon>EmplyeeAdditionalDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrations\EmplyeeAdditionalDetails.aspx.designer.cs">
+      <DependentUpon>EmplyeeAdditionalDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registrations\OTPGeneration.aspx.cs">
+      <DependentUpon>OTPGeneration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrations\OTPGeneration.aspx.designer.cs">
+      <DependentUpon>OTPGeneration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registrations\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrations\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registrations\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrations\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Payroll\EmployeeIDCard.aspx.cs">
+      <DependentUpon>EmployeeIDCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Payroll\EmployeeIDCard.aspx.designer.cs">
+      <DependentUpon>EmployeeIDCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Payroll\EmployeePaySlip.aspx.cs">
+      <DependentUpon>EmployeePaySlip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Payroll\EmployeePaySlip.aspx.designer.cs">
+      <DependentUpon>EmployeePaySlip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Payroll\PaySlipGeneration.aspx.cs">
+      <DependentUpon>PaySlipGeneration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Payroll\PaySlipGeneration.aspx.designer.cs">
+      <DependentUpon>PaySlipGeneration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Payroll\WageRegister.aspx.cs">
+      <DependentUpon>WageRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Payroll\WageRegister.aspx.designer.cs">
+      <DependentUpon>WageRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowAllMasterDetails\AllBranchMaster.aspx.cs">
+      <DependentUpon>AllBranchMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowAllMasterDetails\AllBranchMaster.aspx.designer.cs">
+      <DependentUpon>AllBranchMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowAllMasterDetails\AllClientMaster.aspx.cs">
+      <DependentUpon>AllClientMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowAllMasterDetails\AllClientMaster.aspx.designer.cs">
+      <DependentUpon>AllClientMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowAllMasterDetails\AllClientRateContract.aspx.cs">
+      <DependentUpon>AllClientRateContract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowAllMasterDetails\AllClientRateContract.aspx.designer.cs">
+      <DependentUpon>AllClientRateContract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowAllMasterDetails\AllEmployeeDetails.aspx.cs">
+      <DependentUpon>AllEmployeeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowAllMasterDetails\AllEmployeeDetails.aspx.designer.cs">
+      <DependentUpon>AllEmployeeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowAllMasterDetails\AllSiteMaster.aspx.cs">
+      <DependentUpon>AllSiteMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowAllMasterDetails\AllSiteMaster.aspx.designer.cs">
+      <DependentUpon>AllSiteMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowAllMasterDetails\AllUserMaster.aspx.cs">
+      <DependentUpon>AllUserMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowAllMasterDetails\AllUserMaster.aspx.designer.cs">
+      <DependentUpon>AllUserMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\AttendanceEmployee.aspx.cs">
+      <DependentUpon>AttendanceEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transactions\AttendanceEmployee.aspx.designer.cs">
+      <DependentUpon>AttendanceEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\AttendanceType.aspx.cs">
+      <DependentUpon>AttendanceType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transactions\AttendanceType.aspx.designer.cs">
+      <DependentUpon>AttendanceType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\MonthAttendance.aspx.cs">
+      <DependentUpon>MonthAttendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transactions\MonthAttendance.aspx.designer.cs">
+      <DependentUpon>MonthAttendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\MonthlyAttendanceUpload.aspx.cs">
+      <DependentUpon>MonthlyAttendanceUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transactions\MonthlyAttendanceUpload.aspx.designer.cs">
+      <DependentUpon>MonthlyAttendanceUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\MonthlyVariableUpload.aspx.cs">
+      <DependentUpon>MonthlyVariableUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transactions\MonthlyVariableUpload.aspx.designer.cs">
+      <DependentUpon>MonthlyVariableUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\PaysheetGenerate.aspx.cs">
+      <DependentUpon>PaysheetGenerate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transactions\PaysheetGenerate.aspx.designer.cs">
+      <DependentUpon>PaysheetGenerate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsersLogin.aspx.cs">
+      <DependentUpon>UsersLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsersLogin.aspx.designer.cs">
+      <DependentUpon>UsersLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilitys\AllUploadUtilities.aspx.cs">
+      <DependentUpon>AllUploadUtilities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilitys\AllUploadUtilities.aspx.designer.cs">
+      <DependentUpon>AllUploadUtilities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices\AdditionalServices.asmx.cs">
+      <DependentUpon>AdditionalServices.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\NotificationServices.asmx.cs">
+      <DependentUpon>NotificationServices.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\SendMailServices.asmx.cs">
+      <DependentUpon>SendMailServices.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Compliance\" />
+    <Folder Include="ImageProject\" />
+    <Folder Include="Images\CompanyLogo\" />
+    <Folder Include="Images\ImageProject\" />
+    <Folder Include="PayrollProcessing\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52737</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52737/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

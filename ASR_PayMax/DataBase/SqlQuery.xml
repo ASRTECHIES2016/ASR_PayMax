@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AllScript>
+<script Name="ResetPassword">
+  create table ResetPassword
+  (
+  Id UniqueIdentifier primary key,
+  UserId bigint foreign key references UserMaster(UserId),
+  ResetRequisetDateTime DateTime
+  )
+</script>
+  <script Name="IDENTITY">
+    DBCC CHECKIDENT('TableName', RESEED, 0)
+
+    SET IDENTITY_INSERT Mst_TableDetails OFF
+  </script>
+  <script Name="Mst_TableDetails">
+    Insert Into Mst_TableDetails (TableDetailID,TableCode,TableName,TableDescription,ModuleName,IsActive,CreatedBy,CreatedOn,ModifiedBy,ModifiedDate,Deleted)
+    Values (160,'Mst_160','ResetPassword','ResetPassword','PayRoll',1,null,Getdate(),null,null,0)
+  </script>
+  <script>
+    
+  </script>
+</AllScript>
